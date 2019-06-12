@@ -64,6 +64,7 @@ async function signup(parent, args, context, info) {
     }
   
     return context.prisma.createComment({
+      text: args.text,
       user: { connect: { id: userId } },
       post: { connect: { id: args.postId } },
     })
