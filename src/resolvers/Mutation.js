@@ -55,14 +55,6 @@ async function signup(parent, args, context, info) {
 
     const userId = getUserId(context)
   
-    const postExists = await context.prisma.$exists.comment({
-      user: { id: userId },
-      post: { id: args.postId },
-    })
-    if (postExists) {
-      throw new Error(`Already commented for post: ${args.postId}`)
-    }
-  
     return context.prisma.createComment({
       text: args.text,
       user: { connect: { id: userId } },
