@@ -59,8 +59,8 @@ async function signup(parent, args, context, info) {
       user: { id: userId },
       post: { id: args.postId },
     })
-    if (linkExists) {
-      throw new Error(`Already commented for link: ${args.postId}`)
+    if (postExists) {
+      throw new Error(`Already commented for post: ${args.postId}`)
     }
   
     return context.prisma.createComment({
