@@ -11,6 +11,7 @@ type Mutation {
 
 type Subscription {
     newPost: Post
+    newComment: Comment
 }
 
 type Post {
