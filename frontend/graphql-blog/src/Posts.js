@@ -13,6 +13,12 @@ const POSTS_QUERY = gql`
       postedBy {
           name
       }
+      comments {
+        text
+        user {
+          name
+        }
+      }
     }
   }
 `;
@@ -24,7 +30,7 @@ const Posts = () => (
                 if(loading) return <p>Loading ...</p>
                 if(error) return `Error! ${error.message}`;
                 return data.post.map((currentPost) => (
-                    <Post post={currentPost} />
+                    <Post post={currentPost} comments={currentPost.comments}/>
                 ));
             }}
     </Query>
