@@ -4,8 +4,10 @@ const Post = (props) => (
 
         <div className="card text-white bg-secondary mt-4">
             <div className="card-body">
-            <h4 className="card-title"><b>Post Title :</b>  {`${props.post.title} `}</h4>
-            <p className="card-text"><b>Post Body :</b>  {`${props.post.body} `}</p>
+                <h4 className="card-title"><b>Post Title :</b>  {`${props.post.title} `}</h4>
+                <p className="card-text"><b>Post Body :</b>  {`${props.post.body} `}</p>
+                <p className="card-text"><b>Posted by :</b>  {`${props.post.postedBy.name} `}</p>
+            
             </div>
         </div>
 )

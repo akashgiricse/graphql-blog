@@ -10,6 +10,9 @@ const POSTS_QUERY = gql`
       id
       title
       body
+      postedBy {
+          name
+      }
     }
   }
 `;
@@ -20,7 +23,6 @@ const Posts = () => (
             {({ loading, error, data}) => {
                 if(loading) return <p>Loading ...</p>
                 if(error) return `Error! ${error.message}`;
-                console.log(data)
                 return data.post.map((currentPost) => (
                     <Post post={currentPost} />
                 ));
