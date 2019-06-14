@@ -1,9 +1,13 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import gpl from 'graphql-tag';
+import gql from 'graphql-tag';
 
 import Post from './Post';
 
+const POSTS = gql`
+
+
+`;
 
 const Posts = () => (
     <Query query={gpl`{
